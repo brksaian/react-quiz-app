@@ -4,24 +4,24 @@
     "slug": "quiz-game",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./src/assets/icon.png",
-    "userInterfaceStyle": "light",
+    "icon": "./src/assets/brain_icon.png",
+    "userInterfaceStyle": "dark",
     "splash": {
-      "image": "./src/assets/splash.png",
+      "image": "./src/assets/splash-quiz.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "##e8b723"
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./src/assets/adaptive-icon.png",
+        "foregroundImage": "./src/assets/brain_icon.png",
         "backgroundColor": "#ffffff"
       }
     },
     "web": {
-      "favicon": "./src/assets/favicon.png"
+      "favicon": "./src/assets/brain_icon.png"
     }
   }
 }
