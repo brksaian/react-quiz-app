@@ -1,11 +1,13 @@
+import { Ionicons } from '@expo/vector-icons';
 import React, { useEffect, useState } from 'react';
-import { Button, StyleSheet, Text, View, Alert, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useGame } from '../contexts/GameContext';
 
 export const GameScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const { players, currentQuestion, nextQuestion, addScore, selectedCategory, setSelectedCategory } = useGame();
   const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0);
   const [categoryChosen, setCategoryChosen] = useState(false);
+  const [showAnswer, setShowAnswer] = useState(false);
 
   useEffect(() => {
     nextQuestion();
@@ -27,22 +29,21 @@ export const GameScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
     setSelectedCategory(category);
     setCategoryChosen(true);
     nextQuestion(category);
+    setShowAnswer(false);
   };
 
   const handleNextTurn = () => {
     setCategoryChosen(false);
     nextQuestion();
+    setShowAnswer(false);
   };
 
   const handleEndGame = () => {
-    Alert.alert(
-      "Fim do Jogo",
-      "Deseja iniciar um novo jogo?",
-      [
-        { text: "Sim", onPress: () => navigation.navigate('HomeScreen') },
-        { text: "Não", style: "cancel" }
-      ]
-    );
+    navigation.navigate('ResultScreen');
+  };
+
+  const toggleShowAnswer = () => {
+    setShowAnswer(!showAnswer);
   };
 
   const currentPlayer = players[currentPlayerIndex];
@@ -74,7 +75,15 @@ export const GameScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
             <Text style={styles.question}>Pergunta:</Text>
             <Text style={styles.questionText}>{currentQuestion.question}</Text>
           </View>
-          <Text style={styles.category}>Categoria: {currentQuestion.category}</Text>
+          <View style={styles.answerContainer}>
+            <Text style={styles.category}>Categoria: {currentQuestion.category}</Text>
+            <TouchableOpacity onPress={toggleShowAnswer} style={styles.eyeButton}>
+              <Ionicons name={showAnswer ? "eye-off" : "eye"} size={24} color="#555" />
+            </TouchableOpacity>
+          </View>
+          {showAnswer && (
+            <Text style={styles.answerText}>Resposta: {currentQuestion.answer}</Text>
+          )}
           <Text style={styles.player}>Jogador Atual: {currentPlayer.name}</Text>
           <View style={styles.buttonsContainer}>
             <TouchableOpacity style={styles.answerButton} onPress={() => handleAnswer(true)}>
@@ -116,7 +125,10 @@ const styles = StyleSheet.create({
   questionContainer: { alignItems: 'center', marginVertical: 20 },
   question: { fontSize: 20, fontWeight: '600', color: '#333' },
   questionText: { fontSize: 18, color: '#555', textAlign: 'center', marginTop: 10 },
-  category: { fontSize: 16, color: '#666', marginTop: 5 },
+  answerContainer: { flexDirection: 'row', alignItems: 'center', marginTop: 15 },
+  eyeButton: { marginLeft: 10 },
+  answerText: { fontSize: 20, fontWeight: '600', color: '#37b24d', marginTop: 10, textAlign: 'center' },
+  category: { fontSize: 16, color: '#666' },
   player: { fontSize: 18, fontWeight: '600', color: '#444', marginVertical: 10 },
   buttonsContainer: { flexDirection: 'row', justifyContent: 'space-around', width: '100%', marginTop: 20 },
   answerButton: { 
