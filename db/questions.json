@@ -1,0 +1,111 @@
+[
+    {
+      "id": 1,
+      "question": "Quem pintou a Mona Lisa?",
+      "category": "Artes",
+      "answer": "Leonardo da Vinci"
+    },
+    {
+      "id": 2,
+      "question": "Qual é a técnica de pintura que usa pequenas pinceladas para criar efeitos de luz?",
+      "category": "Artes",
+      "answer": "Pontilhismo"
+    },
+    {
+      "id": 3,
+      "question": "Em que país nasceu Pablo Picasso?",
+      "category": "Artes",
+      "answer": "Espanha"
+    },
+    {
+      "id": 4,
+      "question": "Qual é a capital da França?",
+      "category": "Geografia",
+      "answer": "Paris"
+    },
+    {
+      "id": 5,
+      "question": "Em que continente está localizada a maior parte do Deserto do Saara?",
+      "category": "Geografia",
+      "answer": "África"
+    },
+    {
+      "id": 6,
+      "question": "Qual é o maior país do mundo em área territorial?",
+      "category": "Geografia",
+      "answer": "Rússia"
+    },
+    {
+      "id": 7,
+      "question": "Quantos jogadores cada time tem no campo em uma partida de futebol?",
+      "category": "Esporte",
+      "answer": "11"
+    },
+    {
+      "id": 8,
+      "question": "Em que ano o Brasil ganhou sua primeira Copa do Mundo?",
+      "category": "Esporte",
+      "answer": "1958"
+    },
+    {
+      "id": 9,
+      "question": "Qual é o esporte em que se usa um taco e uma pequena bola branca em uma mesa verde?",
+      "category": "Esporte",
+      "answer": "Sinuca"
+    },
+    {
+      "id": 10,
+      "question": "Qual é o nome da série com personagens como Jon Snow e Daenerys Targaryen?",
+      "category": "Entretenimento",
+      "answer": "Game of Thrones"
+    },
+    {
+      "id": 11,
+      "question": "Qual personagem da Disney perde o sapato em um baile?",
+      "category": "Entretenimento",
+      "answer": "Cinderela"
+    },
+    {
+      "id": 12,
+      "question": "Quem é o autor do livro 'O Senhor dos Anéis'?",
+      "category": "Entretenimento",
+      "answer": "J.R.R. Tolkien"
+    },
+    {
+      "id": 13,
+      "question": "Quem foi o primeiro presidente dos Estados Unidos?",
+      "category": "História",
+      "answer": "George Washington"
+    },
+    {
+      "id": 14,
+      "question": "Em que ano aconteceu a Revolução Francesa?",
+      "category": "História",
+      "answer": "1789"
+    },
+    {
+      "id": 15,
+      "question": "Quem descobriu o Brasil em 1500?",
+      "category": "História",
+      "answer": "Pedro Álvares Cabral"
+    },
+    {
+      "id": 16,
+      "question": "Qual planeta é conhecido como 'Planeta Vermelho'?",
+      "category": "Ciências",
+      "answer": "Marte"
+    },
+    {
+      "id": 17,
+      "question": "Qual é a fórmula química da água?",
+      "category": "Ciências",
+      "answer": "H2O"
+    },
+    {
+      "id": 18,
+      "question": "Quantos ossos tem o corpo humano adulto?",
+      "category": "Ciências",
+      "answer": "206"
+    }
+  ]
+  
